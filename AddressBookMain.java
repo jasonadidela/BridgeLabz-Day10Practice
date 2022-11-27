@@ -4,7 +4,8 @@ public class AddressBookMain {
     public static void main(String[] args) {
 
         do {
-            System.out.println("Enter:[D/d]-Display Contacts" + "\s" + "[A/a]-Add Contact " + "\s" + "[E/e]-Edit Contact" + "\s" +
+            System.out.println("Enter:[D/d]-Display Contacts" + "\s" + "[A/a]-Add Contact " + "\s" +
+                    "[E/e]-Edit Contact" + "\s" +
                     "[R/r]-Remove Contact");
             Scanner value = new Scanner(System.in);
             char input = value.next().charAt(0);
@@ -17,4 +18,3 @@ public class AddressBookMain {
         } while (true);
     }
 }
-
