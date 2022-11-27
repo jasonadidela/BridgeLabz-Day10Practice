@@ -16,7 +16,7 @@ public class Person {
     public void setFirstName(String firstName) {
 
         this.firstName = firstName;
-        System.out.println("First Name:" + firstName);
+//        System.out.println("First Name:" + firstName);
     }
     public String getLastName() {
 
@@ -26,7 +26,7 @@ public class Person {
     public void setLastName(String lastName) {
 
         this.lastName = lastName;
-        System.out.println("Last Name:" +lastName);
+       // System.out.println("Last Name:" +lastName);
     }
     public String getAddress() {
 
@@ -36,7 +36,7 @@ public class Person {
     public void setAddress(String address) {
 
         this.address = address;
-        System.out.println("Address:" + address);
+       // System.out.println("Address:" + address);
     }
     public String getCity() {
         return city;
@@ -44,7 +44,7 @@ public class Person {
 
     public void setCity(String city) {
         this.city= city;
-        System.out.println("City:" + city);
+       // System.out.println("City:" + city);
     }
     public String getState() {
         return state;
@@ -52,7 +52,7 @@ public class Person {
 
     public void setState(String state) {
         this.state = state;
-        System.out.println("State:" +state);
+        //System.out.println("State:" +state);
     }
     public String getZipCode() {
         return zipCode;
@@ -60,7 +60,7 @@ public class Person {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
-        System.out.println("Zip Code:" + zipCode);
+       // System.out.println("Zip Code:" + zipCode);
     }
     public String getPhoneNumber() {
         return phoneNumber;
@@ -68,7 +68,7 @@ public class Person {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-        System.out.println("PH NO:" + phoneNumber);
+        //System.out.println("PH NO:" + phoneNumber);
     }
     public String getEmail() {
         return email;
@@ -76,6 +76,6 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
-        System.out.println("Email:"+email);
+       // System.out.println("Email:"+email);
     }
 }
