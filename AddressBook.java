@@ -4,6 +4,7 @@ public class AddressBook {
 
     static ArrayList<Person> list = new ArrayList<>();
 
+
     public static void addContact() {
 
         Scanner s = new Scanner(System.in);
@@ -101,12 +102,14 @@ public class AddressBook {
         String firstName = s.next();
 
         list.removeIf(person -> firstName.equals(person.getFirstName()));
+
     }
 
     public static void printContact() {
         for (Person person : list) {
+            int i = 1;
             System.out.println("**********************************************"+
-                    "\nContact:\s" +list.size()+
+                    "\nContact:\s"+ list.get(i)+
                     "\nFirst Name:\s"+ person.getFirstName()+
                     "\nLast Name:\s"+person.getLastName()+
                     "\nAddress:\s"+person.getAddress()+
@@ -115,6 +118,8 @@ public class AddressBook {
                     "\nZip Code:\s"+person.getZipCode()+
                     "\nPhone No:\s"+person.getPhoneNumber()+
                     "\nEmail:\s"+person.getEmail()+
+                    "\n**********************************************"+
+                    "\nTotal Number of Contacts:\s" +list.size()+
                     "\n**********************************************");
         }
     }
