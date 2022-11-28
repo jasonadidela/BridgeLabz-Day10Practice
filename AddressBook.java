@@ -7,40 +7,40 @@ public class AddressBook {
     public static void addContact() {
 
         Scanner s = new Scanner(System.in);
-        Person person = new Person();
+        Person contact = new Person();
+        list.add(contact);
 
         System.out.println("Enter the First name:");
         String firstName = s.next();
-        person.setFirstName(firstName);
-        list.add(person);
+        contact.setFirstName(firstName);
 
         System.out.println("Enter the Last name:");
         String lastName = s.next();
-        person.setLastName(lastName);
+        contact.setLastName(lastName);
 
         System.out.println("Enter the Address:");
         String address = s.next();
-        person.setAddress(address);
+        contact.setAddress(address);
 
         System.out.println("Enter the City:");
         String city = s.next();
-        person.setCity(city);
+        contact.setCity(city);
 
         System.out.println("Enter the State:");
         String state = s.next();
-        person.setState(state);
+        contact.setState(state);
 
         System.out.println("Enter the Zip:");
         String zipCode = s.next();
-        person.setZipCode(zipCode);
+        contact.setZipCode(zipCode);
 
         System.out.println("Enter the Phone Number:");
         String phoneNumber = s.next();
-        person.setPhoneNumber(phoneNumber);
+        contact.setPhoneNumber(phoneNumber);
 
         System.out.println("Enter the Email:");
         String email = s.next();
-        person.setEmail(email);
+        contact.setEmail(email);
 
     }
 
@@ -51,39 +51,48 @@ public class AddressBook {
 
         for (Person person : list) {
             if (firstName.equals(person.getFirstName())) {
-                System.out.println("Choose field you want to add:");
-                System.out
-                        .println("1.Last Name\t2.City\t3.State\t4.Zip\t5.Phone Number\t6.Email ");
-                switch (s.nextInt()) {
-                    case 1 -> {
-                        System.out.println("Re-Correct your lastname");
-                        person.setLastName(s.next());
+                int i = 1;
+                do {
+                    System.out.println("Choose field you want to add:");
+                    System.out.println("[L/l]Last Name\s[C/c]City\s[S/s]State\s[Z/z]Zip\s[P/p]Phone Number\s[E/e]Email ");
+                    char value = s.next().charAt(0);
+                    if (value == 'L' || value == 'l' || value == 'c' || value == 'C' || value == 's' || value == 'S' ||
+                            value == 'z' || value == 'Z' || value == 'p' || value == 'P' || value == 'e' || value == 'E') {
+                        switch (value) {
+                            case 'L', 'l' -> {
+                                System.out.println("Re-Correct your lastname");
+                                person.setLastName(s.next());
+                            }
+                            case 'c', 'C' -> {
+                                System.out.println("Re-Correct your City");
+                                person.setCity(s.next());
+                            }
+                            case 's', 'S' -> {
+                                System.out.println("Re-Correct your State");
+                                person.setState(s.next());
+                            }
+                            case 'z', 'Z' -> {
+                                System.out.println("Re-Correct your Zip");
+                                person.setZipCode(s.next());
+                            }
+                            case 'p', 'P' -> {
+                                System.out.println("Re-Correct your Phone Number");
+                                person.setPhoneNumber(s.next());
+                            }
+                            case 'e', 'E' -> {
+                                System.out.println("Re-Correct your Email");
+                                person.setEmail(s.next());
+                            }
+                        }
+                    } else {
+                        System.out.println("Error("+i+"): invalid input entered for the interstate question");
+                        i++;
                     }
-                    case 2 -> {
-                        System.out.println("Re-Correct your City");
-                        person.setCity(s.next());
-                    }
-                    case 3 -> {
-                        System.out.println("Re-Correct your State");
-                        person.setState(s.next());
-                    }
-                    case 4 -> {
-                        System.out.println("Re-Correct your Zip");
-                        person.setZipCode(s.next());
-                    }
-                    case 5 -> {
-                        System.out.println("Re-Correct your Phone Number");
-                        person.setPhoneNumber(s.next());
-                    }
-                    case 6 -> {
-                        System.out.println("Re-Correct your Email");
-                        person.setEmail(s.next());
-                    }
+                }while (i<=3);{
+                    System.out.println("Too many args Edite ended!");
                 }
-
             }
         }
-
     }
 
     public static void removeContact() {
@@ -97,6 +106,7 @@ public class AddressBook {
     public static void printContact() {
         for (Person person : list) {
             System.out.println("**********************************************"+
+                    "\nContact:\s" +list.size()+
                     "\nFirst Name:\s"+ person.getFirstName()+
                     "\nLast Name:\s"+person.getLastName()+
                     "\nAddress:\s"+person.getAddress()+
