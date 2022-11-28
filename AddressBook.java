@@ -119,7 +119,7 @@ public class AddressBook {
                     "\nPhone No:\s"+person.getPhoneNumber()+
                     "\nEmail:\s"+person.getEmail()+
                     "\n**********************************************"+
-                    "\nTotal Number of Contacts:\s" +list.size()+
+                    "\nTotal Number of Contacts:\s" + list.size()+
                     "\n**********************************************");
         }
     }
