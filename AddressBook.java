@@ -108,6 +108,7 @@ public class AddressBook {
     public static void printContact() {
         for (Person person : list) {
             int i = 1;
+            i++;
             System.out.println("**********************************************"+
                     "\nContact:\s"+ list.get(i)+
                     "\nFirst Name:\s"+ person.getFirstName()+
