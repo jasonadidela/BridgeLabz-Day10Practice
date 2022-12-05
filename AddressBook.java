@@ -2,14 +2,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class AddressBook {
 
-    static ArrayList<Person> list = new ArrayList<>();
-
+    static ArrayList<Person> list = new ArrayList<>();// The new keyword is Allocating Desired Memory for "list"(Object) in Person class.
+           // ArrayList is a class used for storing elements, its creating new generic arraylist.
 
     public static void addContact() {
 
         Scanner s = new Scanner(System.in);
-        Person contact = new Person();
-        list.add(contact);
+        Person contact = new Person();              // The new keyword is Allocating Desired Memory for "contact"(Object) in "Person" class.
+        list.add(contact);                          //It is used to append "contact" elements at the end of a "list".
 
         System.out.println("Enter the First name:");
         String firstName = s.next();
@@ -45,7 +45,7 @@ public class AddressBook {
 
     }
 
-    public static void editContact() {
+    public static void editContact() {              // Created Object called "editContact", and is called in "AddersBookMain.java" class by main method.
         Scanner s = new Scanner(System.in);
         System.out.println("Enter your First name:");
         String firstName = s.next();
@@ -53,7 +53,7 @@ public class AddressBook {
         for (Person person : list) {
             if (firstName.equals(person.getFirstName())) {
                 int i = 1;
-                do {
+                while (i<=3){
                     System.out.println("Choose field you want to add:");
                     System.out.println("[L/l]Last Name\s[C/c]City\s[S/s]State\s[Z/z]Zip\s[P/p]Phone Number\s[E/e]Email ");
                     char value = s.next().charAt(0);
@@ -89,7 +89,6 @@ public class AddressBook {
                         System.out.println("Error("+i+"): invalid input entered for the interstate question");
                         i++;
                     }
-                }while (i<=3);{
                     System.out.println("Too many args Edite ended!");
                 }
             }
