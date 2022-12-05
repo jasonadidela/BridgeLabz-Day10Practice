@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class AddressBookMain {
     public static void main(String[] args) {
         int i = 1;
-        do {
+        while (i<=3){
             System.out.println("Enter:[D/d]-Display Contacts" + "\s" + "[A/a]-Add Contact " + "\s" +
                     "[E/e]-Edit Contact" + "\s" + "[R/r]-Remove Contact");
             Scanner value = new Scanner(System.in);
@@ -20,8 +20,6 @@ public class AddressBookMain {
                 System.out.println("Error("+i+"): invalid input entered for the interstate question");
                 i++;
             }
-        }while (i<=3);{
-            System.out.println("Too many args Program ended!");
-        }
+        }System.out.println("Too many args Program ended!");
     }
 }
